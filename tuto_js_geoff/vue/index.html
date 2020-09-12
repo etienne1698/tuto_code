@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tuto vue.js</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+<div id="app">
+    <ul v-if="displayUsers">
+        <li v-for="user, index in users">
+            {{ user.name }}
+
+            <button v-on:click="deleteUser(index)">
+                X
+            </button>
+        </li>
+    </ul>
+
+    <button v-on:click="toggleDisplayUsers()">
+        <span v-if="displayUsers">Cacher les utilisateurs</span>
+        <span v-if="!displayUsers">Afficher les utilisateurs</span>
+    </button>
+</div>
+
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            users: [
+                {name: "Paul"},
+                {name: "Etienne"},
+                {name: "Geoff"}
+            ],
+            displayUsers: false
+
+        },
+        methods: {
+            deleteUser(index) {
+                this.users.splice(index, 1);
+            },
+            toggleDisplayUsers() {
+                this.displayUsers = !this.displayUsers;
+            }
+        }
+    })
+</script>
+</body>
+</html>
