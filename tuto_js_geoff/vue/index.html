@@ -19,10 +19,18 @@
     <button v-on:click="toggleDisplayUsers()">
         <span v-if="displayUsers">Cacher les utilisateurs</span>
         <span v-if="!displayUsers">Afficher les utilisateurs</span>
+        <span>( {{ usersListSize }} )</span>
     </button>
 </div>
 
 <script>
+    /**
+     * "data" : les données du composant
+     * "methods" : les actions du composant
+     * "computed" : les données qui doivent être calculé a chaque modification de "data"
+     *
+     * @type {Vue}
+     */
     var app = new Vue({
         el: '#app',
         data: {
@@ -40,6 +48,11 @@
             },
             toggleDisplayUsers() {
                 this.displayUsers = !this.displayUsers;
+            }
+        },
+        computed: {
+            usersListSize() {
+                return this.users.length;
             }
         }
     })
