@@ -21,6 +21,10 @@
         <span v-if="!displayUsers">Afficher les utilisateurs</span>
         <span>( {{ usersListSize }} )</span>
     </button>
+
+    <br /><br />
+    <input v-model="newUserName"/>
+    <button v-on:click="addUser()">Ajouter</button>
 </div>
 
 <script>
@@ -28,6 +32,9 @@
      * "data" : les données du composant
      * "methods" : les actions du composant
      * "computed" : les données qui doivent être calculé a chaque modification de "data"
+     *
+     * "el": l'element HTML sur lequel on accroche l'objet de Type VUE,
+     *       on aura pas a s'en soucis quand on travaillera avec vue-cli et typescript
      *
      * @type {Vue}
      */
@@ -39,7 +46,8 @@
                 {name: "Etienne"},
                 {name: "Geoff"}
             ],
-            displayUsers: false
+            displayUsers: false,
+            newUserName: ""
 
         },
         methods: {
@@ -48,6 +56,12 @@
             },
             toggleDisplayUsers() {
                 this.displayUsers = !this.displayUsers;
+            },
+            addUser() {
+                if (this.newUserName.trim() !== '') {
+                    this.users.push({name: this.newUserName});
+                    this.newUserName = '';
+                }
             }
         },
         computed: {
