@@ -1,0 +1,41 @@
+<script>
+    /**
+     * Fonctions asynchrone, deux syntaxes : async/await, Promise/then
+     */
+
+    let prenom = 'Geoff';
+
+    /*
+    let getPrenom = async function () {
+        return prenom;
+    };
+
+    async function main() {
+        console.log(
+          await getPrenom()
+        );
+    }
+    */
+
+    function resoleAsync(resolve) {
+        resolve(prenom);
+    }
+
+    let getPrenom = function () {
+        //return new Promise(resoleAsync);
+        return new Promise(function (resolve) {
+            resolve(prenom);
+        });
+
+    };
+
+    function main() {
+        getPrenom().then(result => {
+            console.log(result)
+        }).catch(err => {
+
+        });
+    }
+
+    main();
+</script>

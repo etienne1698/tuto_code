@@ -1,0 +1,33 @@
+<script>
+    let geoff = {
+        prenom: 'Geoff',
+        nom : 'MULLER'
+    };
+    console.log(geoff.prenom);
+
+    /*
+    let Person = function (prenom) {
+        this.prenom = prenom;
+    };
+
+    let Homme = function(prenom, age = 12) {
+        this.age = age;
+    };
+    Homme.prototype = Person;
+    */
+    class Person {
+        constructor(prenom = 'kevin') {
+            this.prenom = prenom;
+        }
+    }
+    class Homme extends Person {
+        constructor(prenom, age = 12) {
+            super(prenom);
+            this.age = age;
+
+        }
+    }
+
+    let kevin = new Homme();
+    console.log(kevin);
+</script>

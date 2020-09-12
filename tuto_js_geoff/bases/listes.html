@@ -1,0 +1,45 @@
+<script>
+    let liste = [
+        "a",
+        "b",
+        "c",
+        "avc"
+    ];
+
+    // afficher le tableau
+    for (let i of liste) {
+        console.log(i);
+    }
+    for (let i in liste) {
+        console.log(liste[i]);
+    }
+
+    liste.forEach(elem => {
+        console.log(elem);
+    });
+
+
+    let listeDeNombres = [1, 2, 3];
+    listeDeNombres.push(5);
+    let listeDeNombresDouble = listeDeNombres.map(elem => {
+        return elem * 2;
+    });
+    console.log(listeDeNombres);
+    console.log(listeDeNombresDouble);
+
+    console.error( liste.indexOf("b") );
+    console.error( liste.indexOf("test") );
+    liste.forEach((elem, index) => {
+        if (elem.includes('a')) {
+            console.warn(index);
+        }
+    });
+
+
+    let toutAdd = listeDeNombres.reduce((previousValue, currentValue) => {
+        return previousValue + currentValue;
+    });
+    console.error(toutAdd);
+
+
+</script>
