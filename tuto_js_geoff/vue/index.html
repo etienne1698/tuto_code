@@ -6,9 +6,16 @@
 </head>
 <body>
 <div id="app">
+    <button v-on:click="toggleDisplayUsers()">
+        <span v-if="displayUsers">Cacher les utilisateurs</span>
+        <span v-if="!displayUsers">Afficher les utilisateurs</span>
+        <span>( {{ usersListSize }} )</span>
+    </button>
+
     <ul v-if="displayUsers">
         <li v-for="user, index in users">
             {{ user.name }}
+            {{ user.age ? "age : " +  user.age : "" }}
 
             <button v-on:click="deleteUser(index)">
                 X
@@ -16,11 +23,6 @@
         </li>
     </ul>
 
-    <button v-on:click="toggleDisplayUsers()">
-        <span v-if="displayUsers">Cacher les utilisateurs</span>
-        <span v-if="!displayUsers">Afficher les utilisateurs</span>
-        <span>( {{ usersListSize }} )</span>
-    </button>
 
     <br /><br />
     <input v-model="newUserName"/>
@@ -38,7 +40,7 @@
      *
      * @type {Vue}
      */
-    var app = new Vue({
+    let app = new Vue({
         el: '#app',
         data: {
             users: [
@@ -46,7 +48,7 @@
                 {name: "Etienne"},
                 {name: "Geoff"}
             ],
-            displayUsers: false,
+            displayUsers: true,
             newUserName: ""
 
         },
@@ -59,7 +61,7 @@
             },
             addUser() {
                 if (this.newUserName.trim() !== '') {
-                    this.users.push({name: this.newUserName});
+                    this.users.push({name: this.newUserName, age:19});
                     this.newUserName = '';
                 }
             }
@@ -67,7 +69,7 @@
         computed: {
             usersListSize() {
                 return this.users.length;
-            }
+            },
         }
     })
 </script>
