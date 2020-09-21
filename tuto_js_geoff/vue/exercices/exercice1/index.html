@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercice 1</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+<div id="app">
+    <h2>liste de produits</h2>
+    <ul>
+        <li v-for="produit in produits">
+            {{produit.id}}
+            {{produit.name}}
+            {{produit.price}} €
+
+            <!-- v-on:click = @click -->
+            <button @click="addToCart(produit)">
+                Ajouter
+            </button>
+        </li>
+    </ul>
+    QTY : <input v-model="currentQty"/>
+    <h2>Panier</h2>
+    <p>Prix total:</p> {{calculTotalPrice}}
+    <ul>
+        <li v-for="produit, index in panier">
+            {{produit.id}}
+            {{produit.name}}
+            {{produit.price}} €
+            qty{{ produit.qty }}
+        </li>
+    </ul>
+</div>
+
+<script>
+    let app = new Vue({
+        el: '#app',
+
+        data: function () {
+            return  {
+                produits: [
+                    {
+                        "id": 1,
+                        "name": "Bananes",
+                        "price": 1.2
+                    },
+                    {
+                        "id": 2,
+                        "name": "Pommes",
+                        "price": 1.45
+                    },
+                    {
+                        "id": 3,
+                        "name": "Fraises",
+                        "price": 2.25
+                    }
+                ],
+                panier: [],
+                currentQty: 1,
+            }
+        },
+        methods: {
+            addToCart(produit){
+                var productFound = this.panier.find(elem => {
+                   return elem.id == produit.id;
+                });
+                if (productFound) {
+                    this.panier[this.panier.indexOf(productFound)].qty += Number.parseInt(this.currentQty);
+                    this.$set(this.panier, this.panier.indexOf(productFound), this.panier[this.panier.indexOf(productFound)]);
+
+                } else {
+                    produit.qty = Number.parseInt(this.currentQty);
+                    this.panier.push(produit);
+                    this.$set(this.panier, this.panier.indexOf(productFound), this.panier[this.panier.indexOf(productFound)]);
+
+                }
+                Vue.nextTick();//refresh
+            }
+
+        },
+        computed: {
+            calculTotalPrice(){
+                let total = 0;
+                this.panier.forEach(function(elem, index){
+                    total = total + (elem.price * elem.qty);
+                });
+                return total;
+            }
+        }
+    })
+</script>
+</body>
+</html>

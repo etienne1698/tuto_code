@@ -1,0 +1,4 @@
+- Afficher tout les produits
+- permettre l'ajout au panier (un autre listing de produit), avec quantité initialement a 0
+- afficher le prix total et le nombre de produit dans le panier
+
