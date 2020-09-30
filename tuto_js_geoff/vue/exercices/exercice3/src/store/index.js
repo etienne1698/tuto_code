@@ -30,7 +30,6 @@ export default new Vuex.Store({
             let productFound = state.cartProducts.find(elem => {
                 return elem.id == product.id;
             });
-
             if (productFound) {
                 state.cartProducts[state.cartProducts.indexOf(productFound)].qty += Number.parseInt(qty);
             } else {

@@ -20,22 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="72bcddd4-c0b5-4f0a-b8d6-454d2965c5df" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tuto_js_geoff/vue/exercices/exercice3/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/tuto_code.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/tuto_code.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tuto_js_geoff/vue/exo2/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tuto_js_geoff/vue/exo2/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tuto_js_geoff/vue/exo2/babel.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tuto_js_geoff/vue/exo2/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tuto_js_geoff/vue/exo2/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tuto_js_geoff/vue/exo2/public/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tuto_js_geoff/vue/exo2/public/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tuto_js_geoff/vue/exo2/src/App.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tuto_js_geoff/vue/exo2/src/assets/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tuto_js_geoff/vue/exo2/src/components/ListeProduits.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tuto_js_geoff/vue/exo2/src/components/Panier.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tuto_js_geoff/vue/exo2/src/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tuto_js_geoff/vue/exercices/exercice3/src/components/Cart.vue" beforeDir="false" afterPath="$PROJECT_DIR$/tuto_js_geoff/vue/exercices/exercice3/src/components/Cart.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tuto_js_geoff/vue/exercices/exercice3/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/tuto_js_geoff/vue/exercices/exercice3/src/store/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +113,7 @@
       <option name="presentableId" value="Default" />
       <updated>1599931197138</updated>
       <workItem from="1599931200283" duration="18655000" />
-      <workItem from="1601470892403" duration="5299000" />
+      <workItem from="1601470892403" duration="5789000" />
     </task>
     <servers />
   </component>

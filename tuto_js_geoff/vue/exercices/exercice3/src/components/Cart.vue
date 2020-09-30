@@ -1,13 +1,12 @@
-
 <template>
   <div>
     <h2>Cart</h2>
-    <p>Total price :</p> {{computeTotalPrice}}
+    <p>Total price :</p> {{ computeTotalPrice }}
     <ul>
       <li v-for="product, index in $store.state.cartProducts">
-        {{product.id}}
-        {{product.name}}
-        {{product.price}} €
+        {{ product.id }}
+        {{ product.name }}
+        {{ product.price }} €
         qty{{ product.qty }}
       </li>
     </ul>

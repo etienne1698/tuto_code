@@ -36,7 +36,10 @@
     });
 
 
-    let toutAdd = listeDeNombres.reduce((previousValue, currentValue) => {
+
+    listeDeNombres = [1, 2, 3];
+    //let toutAdd = listeDeNombres.reduce((previousValue, currentValue) => previousValue + currentValue);
+    let toutAdd = listeDeNombres.reduce(function (previousValue, currentValue) {
         return previousValue + currentValue;
     });
     console.error(toutAdd);
